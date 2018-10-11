@@ -9,11 +9,23 @@
 //loop array and extract the single item from the array per loop and store it in a variable
 //on each loop call iteratee() passing in the item from the current loop into the call to iteratee()
 //iteratee is a function that must return something, capture whatever it returns in a variable
-//add the returned value from iteratee tp myNewArray
+//add the returned value from iteratee to myNewArray
 //after looping, return  myNewArray
-function map(array, iteratee){
 
+const arr = ['red', 'blue', 35, '46', true, undefined];
+const isNumber = item => {
+   return !isNaN(parseFloat(item)) && isFinite(item);
 }
+
+const map = (array, iteratee) => {
+  const newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    myNewArray.push(iteratee(array[i]));
+  }
+  return newArray;
+}
+
+map(arr, isNumber);
 
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 //create a function called `filter`, it should take 2 parameters `array` and `iteratee`
