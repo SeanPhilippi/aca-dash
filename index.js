@@ -36,9 +36,26 @@ map(arr, isNumber);
 //     passing in the item from the current loop
 //iteratee will return true or false, if true add the item to myNewArray else do not
 //after looping, return myNewArray
-function filter(array, iteratee){
 
+const arr = [true, undefined, 34, 'Red', 'blue', '2Red']
+const firstLetterCapital = item => {
+  return typeof item === 'string' 
+  && item[0] === item[0].toUpperCase()
+  && !parseInt(item[0]);
 }
+
+const filter = (array, iteratee) => {
+   const newArray = [];
+   for (let i = 0; i < array.length; i++) {
+     if (iteratee(array[i])) {
+       newArray.push(array[i]);
+       console.log(newArray);
+    } 
+  }
+  return newArray;
+}
+
+filter(arr, firstLetterCapital);
 
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
 //create a function called `find`, it should take 2 parameters `theArray` and `fnc`
