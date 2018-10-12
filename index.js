@@ -102,8 +102,14 @@ const reverse = theArray => {
 //loop theArray
 //add the item from each loop to the new array except the first item
 //return the new array
-function tail(theArray){
-
+const tail = theArray => {
+   const newArray = [];
+   for (let i = 0; i < theArray.length; i++) {
+      if (i > 0) {
+         newArray.push(theArray[i]);
+      } 
+   }
+   return newArray;
 }
 
 //implement the most basic sorting algorithm there is
