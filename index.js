@@ -122,9 +122,18 @@ const tail = theArray => {
 //if a swap is done set it to true
 //after each for loop check the variable, if true, continue the while loop
 //if false return theArray
-function sort(theArray){
-
-}
+const sort = theArray => {
+   for (let a = theArray.length - 1; a >= 0; a--) {
+     for (let i = 1; i <= a; i++) {
+       if (theArray[i-1] > theArray[i]) {
+         const temp = theArray[i - 1];
+         theArray[i - 1] = theArray[i];
+         theArray[i] = temp;
+       }
+     }
+   }
+   return theArray;
+ }
 
 exports.map = map;
 exports.filter = filter;
