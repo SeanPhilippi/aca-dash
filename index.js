@@ -63,10 +63,21 @@ filter(arr, firstLetterCapital);
 //     passing in the item from the current loop
 //fnc will return true or false, if true return the item 
 //after looping, return null
-function find(theArray, fnc){
 
+const arr = ['red', '25', '24', 36, 1, '7blue'];
+const isEvenNum = item => {
+  return typeof parseInt(item) === 'number' && item % 2 === 0
 }
 
+const find = (theArray, fnc) => {
+   for (let i = 0; i < theArray.length; i++) {
+     if (fnc(theArray[i])) {
+       return theArray[i];
+     }
+   }
+}
+
+find(arr, isEvenNum);
 
 //return the last item in theArray
 function findLast(theArray){
