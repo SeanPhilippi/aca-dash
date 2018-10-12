@@ -11,7 +11,6 @@
 //iteratee is a function that must return something, capture whatever it returns in a variable
 //add the returned value from iteratee to myNewArray
 //after looping, return  myNewArray
-
 const arr = ['red', 'blue', 35, '46', true, undefined];
 const isNumber = item => {
    return !isNaN(parseFloat(item)) && isFinite(item);
@@ -36,7 +35,6 @@ map(arr, isNumber);
 //     passing in the item from the current loop
 //iteratee will return true or false, if true add the item to myNewArray else do not
 //after looping, return myNewArray
-
 const arr = [true, undefined, 34, 'Red', 'blue', '2Red']
 const firstLetterCapital = item => {
   return typeof item === 'string' 
@@ -63,7 +61,6 @@ filter(arr, firstLetterCapital);
 //     passing in the item from the current loop
 //fnc will return true or false, if true return the item 
 //after looping, return null
-
 const arr = ['red', '25', '24', 36, 1, '7blue'];
 const isEvenNum = item => {
   return typeof parseInt(item) === 'number' && item % 2 === 0
@@ -80,9 +77,9 @@ const find = (theArray, fnc) => {
 find(arr, isEvenNum);
 
 //return the last item in theArray
-function findLast(theArray){
-
-}
+const findLast = (theArray) => {
+   return theArray[theArray.length - 1];
+ }
 
 //return the first element of the array
 function head(theArray){
