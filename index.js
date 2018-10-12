@@ -82,16 +82,20 @@ const findLast = (theArray) => {
  }
 
 //return the first element of the array
-function head(theArray){
-
+const head = theArray => {
+   return theArray[0];
 }
 
 //create a new array
 //loop theArray in reverse order
 //add the item from each loop to the new array
 //return the new array
-function reverse(theArray){
-
+const reverse = theArray => {
+   const newArray = [];
+   for (let i = theArray.length - 1; i >= 0; i--) {
+      newArray.push(theArray[i]);
+   }
+   return newArray;
 }
 
 //create a new array
